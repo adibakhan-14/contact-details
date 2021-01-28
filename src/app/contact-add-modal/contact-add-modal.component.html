@@ -1,1 +1,247 @@
-<p>contact-add-modal works!</p>
+<div class="container">
+  <h3 mat-dialog-title style="text-align: center;">
+    Create New Contact
+  </h3>
+</div>
+
+<br>
+<div mat-dialog-content style="height: 500px;">
+  <mat-progress-bar
+
+  >    *ngIf="asyncService?.isLoading | async"
+    mode="indeterminate"
+
+  </mat-progress-bar>
+
+
+  <form
+    [id]="formId"
+    [formGroup]="form"
+    (ngSubmit)="onSubmit(form.value)"
+    novalidate
+  >
+    <div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" class="tab">
+      <div
+        fxLayout="row wrap"
+        fxLayoutGap="10px"
+        fxFlex="100%"
+        fxFlex.sm="50%"
+        fxLayout.lt-sm="column"
+        fxFlex.xs="100%"
+        fxLayoutAlign="flex-start"
+      >
+        <mat-form-field
+          fxFlex="0 1 calc(30% - 10px)"
+          fxFlex.lt-md="0 1 calc(50% - 10px)"
+          fxFlex.lt-sm="100%"
+          fxFlex.xs="100%"
+          appearance="fill"
+        >
+          <mat-label>Search Customer</mat-label>
+
+
+
+        </mat-form-field>
+
+        <mat-form-field
+        fxFlex="0 1 calc(30% - 10px)"
+        fxFlex.lt-md="0 1 calc(50% - 10px)"
+        fxFlex.lt-sm="100%"
+        fxFlex.xs="100%"
+        appearance="fill"
+      >
+
+
+
+      </mat-form-field>
+
+
+        <mat-form-field
+          fxFlex="0 1 calc(30% - 10px)"
+          fxFlex.lt-md="0 1 calc(50% - 10px)"
+          fxFlex.lt-sm="100%"
+          fxFlex.xs="100%"
+          appearance="fill"
+        >
+
+
+
+        </mat-form-field>
+
+        <mat-form-field
+          fxFlex="0 1 calc(30% - 10px)"
+          fxFlex.lt-md="0 1 calc(50% - 10px)"
+          fxFlex.lt-sm="100%"
+          fxFlex.xs="100%"
+          appearance="fill"
+        >
+
+
+        </mat-form-field>
+
+        <mat-form-field
+          fxFlex="0 1 calc(30% - 10px)"
+          fxFlex.lt-md="0 1 calc(50% - 10px)"
+          fxFlex.lt-sm="100%"
+          fxFlex.xs="100%"
+          appearance="fill"
+        >
+          <mat-label>Loading Point</mat-label>
+          <input
+            matInput
+            placeholder="Loading Point"
+            formControlName="loading_point"
+
+          />
+
+        </mat-form-field>
+
+        <mat-form-field
+          fxFlex="0 1 calc(35% - 10px)"
+          fxFlex.lt-md="0 1 calc(50% - 10px)"
+          fxFlex.lt-sm="100%"
+          fxFlex.xs="100%"
+          appearance="fill"
+        >
+          <mat-label>Unloading Point</mat-label>
+          <input
+            matInput
+            placeholder="Unloading Point"
+            formControlName="unloading_point"
+
+          />
+
+        </mat-form-field>
+        <mat-form-field
+          fxFlex="0 1 calc(34% - 10px)"
+          fxFlex.lt-md="0 1 calc(50% - 10px)"
+          fxFlex.lt-sm="100%"
+          fxFlex.xs="100%"
+          appearance="fill"
+        >
+
+
+        </mat-form-field>
+
+
+        <mat-form-field
+        fxFlex="0 1 calc(35% - 10px)"
+        fxFlex.lt-md="0 1 calc(50% - 10px)"
+        fxFlex.lt-sm="100%"
+        fxFlex.xs="100%"
+        appearance="fill"
+      >
+        <mat-label>Length</mat-label>
+
+
+      </mat-form-field>
+
+      <mat-form-field
+      fxFlex="0 1 calc(35% - 10px)"
+      fxFlex.lt-md="0 1 calc(50% - 10px)"
+      fxFlex.lt-sm="100%"
+      fxFlex.xs="100%"
+      appearance="fill"
+    >
+      <mat-label>Weight</mat-label>
+      <input
+        readonly
+        matInput
+        placeholder="weight"
+        formControlName="weight"
+
+      />
+
+    </mat-form-field>
+
+        <mat-form-field
+          fxFlex="0 1 calc(28% - 10px)"
+          fxFlex.lt-md="0 1 calc(50% - 10px)"
+          fxFlex.lt-sm="100%"
+          fxFlex.xs="100%"
+          appearance="fill"
+        >
+          <mat-label>Quantity</mat-label>
+          <input
+            type="number"
+            matInput
+            placeholder="Quantity"
+            formControlName="quantity"
+            min="1"
+          />
+
+        </mat-form-field>
+
+        <mat-form-field
+        fxFlex="0 1 calc(35% - 10px)"
+        fxFlex.lt-md="0 1 calc(50% - 10px)"
+        fxFlex.lt-sm="100%"
+        fxFlex.xs="100%"
+        appearance="fill"
+      >
+        <mat-label>Truck Fare</mat-label>
+        <input
+          matInput
+          placeholder="Truck Fare"
+          formControlName="truck_fare"
+
+        />
+
+      </mat-form-field>
+
+      <mat-form-field
+      fxFlex="0 1 calc(35% - 10px)"
+      fxFlex.lt-md="0 1 calc(50% - 10px)"
+      fxFlex.lt-sm="100%"
+      fxFlex.xs="100%"
+      appearance="fill"
+    >
+      <mat-label>Driver Name</mat-label>
+      <input
+        matInput
+        placeholder="Driver Name"
+        formControlName="driver_name"
+
+      />
+
+    </mat-form-field>
+
+
+
+     <div style="width: 30px; padding-top: 7px;">
+          <button
+            type="button"
+            mat-mini-fab
+            (click)="addContact()"
+            style="background-color: #519872;"
+
+          >
+            <mat-icon>add box</mat-icon>
+          </button>
+      </div>
+      </div>
+    </div>
+
+
+  </form>
+
+
+
+<div mat-dialog-actions fxLayoutAlign="end end">
+  <button type="button"
+   mat-raised-button color="warn"
+
+   [mat-dialog-close]>
+    Cancel
+  </button>
+  <button
+    [attr.form]="formId"
+    type="submit"
+    mat-raised-button color="success"
+
+  >
+    Submit
+  </button>
+</div>
+
+</div>
