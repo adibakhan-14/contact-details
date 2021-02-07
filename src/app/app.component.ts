@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {SharedModule} from 'src/app/shared/shared.module';
 import {ContactAddModalComponent} from './contact-add-modal/contact-add-modal.component';
 import { MatDialog } from '@angular/material/dialog';
+// import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -21,17 +22,19 @@ export class AppComponent {
 
   createContact(): void {
     const dialogRef = this.dialog.open(ContactAddModalComponent, {
-      width: '800px',
-      height: '600px'
+      width: '600px',
+      height: '500px'
 
     });
 
-    dialogRef.afterClosed().subscribe((result) => {
+    // dialogRef.afterClosed().subscribe((result) => {
 
-    });
+    // });
   }
 
-  showDetails(){}
+  showDetails(){
+
+  }
 
 }
 

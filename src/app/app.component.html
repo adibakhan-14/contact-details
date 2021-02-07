@@ -19,7 +19,8 @@
     <div class="btn-group">
 
       <button (click)="createContact()">Create Details</button>
-      <button (click)="showDetails()">Show Details</button>
+   <a routerLinkActive="active" routerLink="/contact-detail"> <button>Show Details</button></a>
+
 
     </div>
   </mat-sidenav>
@@ -29,7 +30,7 @@
 
 
 
-
+<!-- <app-contact-detail></app-contact-detail> -->
 
 <router-outlet></router-outlet>
 

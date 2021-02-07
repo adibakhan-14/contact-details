@@ -7,18 +7,25 @@ import { ContactAddModalComponent } from './contact-add-modal/contact-add-modal.
 import { SharedModule} from 'src/app/shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule } from '@ngrx/store';
+import { ContactDetailComponent } from './contact-detail/contact-detail.component';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     ContactAddModalComponent,
+    ContactDetailComponent,
+
 
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     SharedModule,
+
     StoreModule.forRoot({}, {})
   ],
   providers: [],
