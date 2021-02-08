@@ -27,22 +27,15 @@ export class ContactAddModalComponent implements OnInit {
     private formBuilder: FormBuilder,
 
     public dialogRef: MatDialogRef<ContactAddModalComponent>,
+    private contactService: ContactService
+
+
+
+  ) {}
 
 
 
 
-  ) {
-    this.contactForm = this.formBuilder.group({
-      name: [''],
-      company:[''],
-      email: [''],
-      phone: ['']
-    })
-  }
-
-
-
-  addContact(){}
 
 
 
@@ -65,7 +58,22 @@ export class ContactAddModalComponent implements OnInit {
     console.log(this.contactForm.value);
     }
 
+    this.contactService.addContact(this.contactForm.value).subscribe((isAdded) => {
+      if(isAdded){
+      console.log('Data added successfully!');
+      this.close();
+      } else{
+        console.log("ERROR!!");
+
+      }
+
+    })
+
+
   }
+  close = (): void => {
+    this.dialogRef.close();
+  };
 
 
 

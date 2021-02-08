@@ -17,14 +17,27 @@ export class ContactService {
   constructor(private httpClient: HttpClient) { }
 
   addContact(data: Contact): Observable<any> {
-    let API_URL = `${this.REST_API}/add-book`;
+    let API_URL = `${this.REST_API}/add-contact`;
     return this.httpClient.post(API_URL, data)
       .pipe(
         catchError(this.handleError)
       )
   }
 
-  getContact(){}
+  getContacts(){
+    return this.httpClient.get(`${this.REST_API}/contact-detail`);
+  }
+
+  // getContact(id:any): Observable<any> {
+  //   let API_URL = `${this.REST_API}/contact-detail/${id}`;
+  //   return this.httpClient.get(API_URL, { headers: this.httpHeaders })
+  //     .pipe(map((res: any) => {
+  //         return res || {}
+  //       }),
+  //       catchError(this.handleError)
+  //     )
+  // }
+
 
 
 

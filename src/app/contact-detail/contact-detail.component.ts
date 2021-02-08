@@ -12,10 +12,10 @@ export class ContactDetailComponent implements OnInit {
 
   ngOnInit(): void {
 
-    //   this.contactService.getContact().subscribe(res => {
-    //     console.log(res)
-    //     this.Contacts =res;
-    //   });
+      this.contactService.getContacts().subscribe(res => {
+        console.log(res)
+        this.Contacts =res;
+      });
   }
 
   }

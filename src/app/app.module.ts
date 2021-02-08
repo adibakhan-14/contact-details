@@ -8,7 +8,7 @@ import { SharedModule} from 'src/app/shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule } from '@ngrx/store';
 import { ContactDetailComponent } from './contact-detail/contact-detail.component';
-
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -25,7 +25,7 @@ import { ContactDetailComponent } from './contact-detail/contact-detail.componen
     AppRoutingModule,
     BrowserAnimationsModule,
     SharedModule,
-
+    HttpClientModule,
     StoreModule.forRoot({}, {})
   ],
   providers: [],

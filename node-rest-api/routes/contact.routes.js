@@ -18,8 +18,8 @@ contactRoute.post('/add-contact',(req, res, next) => {
 
 
 // Get all Book
-contactRoute.route('/').get((req, res) => {
-    Book.find((error, data) => {
+contactRoute.route('/contact-detail').get((req, res) => {
+  Contact.find((error, data) => {
     if (error) {
       return next(error)
     } else {
@@ -30,7 +30,7 @@ contactRoute.route('/').get((req, res) => {
 
 // Get Book
 contactRoute.route('/contact-detail/:id').get((req, res) => {
-    Book.findById(req.params.id, (error, data) => {
+  Contact.findById(req.params.id, (error, data) => {
     if (error) {
       return next(error)
     } else {

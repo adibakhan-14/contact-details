@@ -27,10 +27,11 @@ export class AppComponent {
 
     });
 
-    // dialogRef.afterClosed().subscribe((result) => {
+    dialogRef.afterClosed().subscribe((result) => {
 
-    // });
+    });
   }
+
 
   showDetails(){
 
